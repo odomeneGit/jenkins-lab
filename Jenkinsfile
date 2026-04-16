@@ -15,6 +15,11 @@ pipeline {
                 echo 'Simulant compilació...'
             }
         }
+        stage('Desplegament') {
+            steps {
+                echo 'Simulant desplegament...'
+            }
+        }
 
     }
 }
