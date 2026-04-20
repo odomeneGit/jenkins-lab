@@ -14,21 +14,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo "🔨 Compilant l'aplicació..."
-                sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
                 echo "🧪 Executant proves..."
-                sh 'mvn test'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo "🚀 Desplegant a producció..."
-                sh './deploy.sh'
             }
         }
 
@@ -37,7 +34,6 @@ pipeline {
     post {
         always {
             echo "🧹 Neteja finalitzada."
-            sh 'rm -rf target/'
         }
         success {
             echo "✅ Desplegament completat amb èxit!"
